@@ -1,7 +1,7 @@
 import * as THREE from "three";
 
 
-export const shapeOne = (wallsPoint, linecolor, cubepos ) => {
+export const shapeOne = (wallsPoint, cubepos ) => {
 
     var randomColor = Math.floor(Math.random()*16777215).toString(16);
 
@@ -21,5 +21,16 @@ export const shapeOne = (wallsPoint, linecolor, cubepos ) => {
 
 
     return{ lines, cube, wallPoints };
+
+}
+
+export const Marker = () => {
+
+  const marker = new THREE.Mesh(new THREE.BoxGeometry( .3, 0, .3 ), new THREE.MeshBasicMaterial({
+    color: "white"
+  }));
+  marker.position.set( 0, 0, 0);
+  
+  return { marker }
 
 }
