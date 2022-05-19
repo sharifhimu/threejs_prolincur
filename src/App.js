@@ -28,8 +28,8 @@ const App = () => {
 
     // CREATING ENVIRONMENT
     const scene = new THREE.Scene();
-    const camera = new THREE.PerspectiveCamera(100, window.innerWidth / window.innerHeight, 1, 1000);
-    camera.position.set(3.5, 10, 5);
+    const camera = new THREE.PerspectiveCamera(80, window.innerWidth / window.innerHeight, .1, 1000);
+    camera.position.set( 3.5, 12, 2 );
     // camera.position.z = 3;
     // camera.position.set(0,0,0);
     const renderer = new THREE.WebGLRenderer({antialias: true});
@@ -42,7 +42,7 @@ const App = () => {
     controls.update();
     controls.enabled = false
 
-    // SHAPEONE
+  // SHAPEONE
   let shapeone = shapeOne(wallsPoint, cubeonepos )
   scene.add( shapeone.lines );
   scene.add( shapeone.cube )
@@ -80,10 +80,6 @@ const App = () => {
   }
 
   document.addEventListener("mousemove", onMouseMove, false);
-
-
-  
-
   renderer.setAnimationLoop(() => {
       renderer.render(scene, camera)
   })
